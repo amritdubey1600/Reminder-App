@@ -1,5 +1,5 @@
 # Reminder-App
 Reminder App
 
-![Alt text](relative/path/to/image.jpg)
+![Alt text](_screen1.JPG)
 
