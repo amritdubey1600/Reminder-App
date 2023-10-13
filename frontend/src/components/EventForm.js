@@ -21,7 +21,7 @@ const EventForm = ()=>{
 
         const createdEvent = {title, date, content}
 
-        const response = await fetch('http://localhost:4000/api/events', {
+        const response = await fetch('https://reminder-app-ov2s.onrender.com/events', {
             method:'POST',
             body: JSON.stringify(createdEvent),
             headers:{
