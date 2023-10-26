@@ -4,6 +4,10 @@ import EventForm from "../components/EventForm.js";
 import { useEventContext } from "../hooks/useEventsContext.js";
 import { useAuthContext } from "../hooks/useAuthContext.js"
 
+const options = { weekday: 'long', day: 'numeric', month: 'long' };
+const today = new Date();
+const formattedDate = today.toLocaleDateString('en-US', options);
+
 const Home = ()=>{
 
     const {events, dispatch} = useEventContext()
@@ -11,7 +15,7 @@ const Home = ()=>{
 
     useEffect(()=>{
         const fetchEvents = async()=>{
-            const response =  await fetch('https://reminder-app-ov2s.onrender.com/api/events',{
+            const response =  await fetch('http://localhost:4000/api/events/',{
                 headers:{
                     'Authorization':`Bearer ${user.token}`
                 }
@@ -29,6 +33,8 @@ const Home = ()=>{
     return (
         <div className="home">
             <div className="workout">
+            <h2>Welcome to Reminder App!</h2> 
+            <h3>Today is {formattedDate}</h3>
                 {events && events.map((event)=>{
                 return <EventDetails key={event._id} event={event}/>
             })}
