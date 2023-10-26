@@ -48,8 +48,8 @@ const EventForm = ()=>{
 
     return (
         <form className="create" onSubmit={handleSubmit}>
-            <h3>Add a New Event</h3>
-            <label>Event Title:</label>
+            <h3>Add a New Reminder</h3>
+            <label>Reminder Title:</label>
             <input 
                 type="text"
                 onChange={(event)=>setTitle(event.target.value)}
@@ -70,7 +70,7 @@ const EventForm = ()=>{
             value={content}
             />
 
-        <button>Add Event</button>
+        <button>Add Reminder</button>
         {error && <div className="error">{error}</div>}
         </form>
     )
