@@ -15,7 +15,7 @@ const Home = ()=>{
 
     useEffect(()=>{
         const fetchEvents = async()=>{
-            const response =  await fetch('http://localhost:4000/api/events/',{
+            const response =  await fetch('https://reminder-app-ov2s.onrender.com/api/events',{
                 headers:{
                     'Authorization':`Bearer ${user.token}`
                 }
